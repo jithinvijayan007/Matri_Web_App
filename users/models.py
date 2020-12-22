@@ -17,7 +17,7 @@ class CustomUserManager(BaseUserManager):
         username = self.normalize_username(username)
         user = self.model(email=email or username **extra_fields)
         user.set_password(password)
-        user.save(using=self._db)
+        user.save(using=self._db) 
         return user
 
     def create_user(self, email, password=None, **extra_fields):
